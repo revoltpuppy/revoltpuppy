@@ -1,0 +1,23 @@
+.is-light{
+	color: $shadow;
+	
+	a,
+	a:visited{
+		color: mix($shadow, $highlight, 50%);
+	}
+	a:hover{
+		color: mix($shadow, $bright-highlight, 66%);
+	}
+}
+
+.is-dark{
+	color: $bright-highlight;
+	
+	a,
+	a:visited{
+		color: $highlight;
+	}	
+	a:hover{
+		color: mix($bright-highlight, $highlight, 66%);
+	}
+}

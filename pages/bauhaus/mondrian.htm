@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Mondrian</title>
+		<style>
+			*,
+			*::before,
+			*::after{
+				box-sizing: border-box;
+			}
+			body{
+				/* box model */
+				margin: 0;
+				background-color: black;
+			}
+			.mondrian{
+				/* box model */
+				height: 100vh;
+				width: 100vw;
+				/* layout */
+				display: grid;
+				grid-gap: 3vh 3vw;
+				grid-template-columns: 22vw 65vw 7vw;
+				grid-template-rows: 36vh 36vh 9.5vh 9.5vh;
+			}
+			.a,
+			.b,
+			.e,
+			.f{
+				background-color: white;
+			}
+			.a{
+				border-bottom: 1.5vh solid black;
+			}
+			.b{
+				/* box model */
+				border-top: 1.5vh solid black;
+				/* layout */
+				grid-column-start: 1;
+				grid-row-start: 2;
+			}
+			.c{
+				/* box model */
+				/*height: 75vh;*/
+				/* layout */
+				grid-column-start: 2;
+				grid-column-end: 4;
+				grid-row-start: 1;
+				grid-row-end: 3;
+				/* backgrounds and borders */
+				background-color: red;
+			}
+			.d{
+				/* layout */
+				/*grid-column-start: 1;*/
+				grid-row-start: 3;
+				grid-row-end: 5;
+				/* backgrounds and borders */
+				background-color: blue;
+			}
+			.e{
+				/* layout */
+				/*grid-column-start: 2;*/
+				grid-row-start: 3;
+				grid-row-end: 5;
+			}
+			.f{
+				/* box model */
+				border-bottom: 1vh solid black;
+				/* layout */
+				/*grid-column-start: 3;
+				grid-row-start: 3;*/
+			}
+			.g{
+				/* box model */
+				border-top: 1vh solid black;
+				/* layout */
+				grid-column-start: 3;
+				grid-row-start: 4;
+				/* backgrounds and borders */
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mondrian">
+			<div class="a"></div>
+			<div class="b"></div>
+			<div class="c"></div>
+			<div class="d"></div>
+			<div class="e"></div>
+			<div class="f"></div>
+			<div class="g"></div>
+		</div>
+	</body>
+</html>

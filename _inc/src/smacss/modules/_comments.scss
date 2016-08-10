@@ -1,0 +1,17 @@
+.comments-section{
+	//layout
+	overflow: hidden;
+	//backgrounds & borders
+	background-image: linear-gradient(transparentize($shadow, 1), $shadow 3px);
+	
+	.comments-content{
+		//padding: 0 1em;
+		margin: 0 auto 2.66666666666667em auto;  // 48/18
+		width: calc(100% - 2em);
+		max-width: 25em;
+		
+		.comment{
+			margin-bottom: 2em;
+		}
+	}
+}

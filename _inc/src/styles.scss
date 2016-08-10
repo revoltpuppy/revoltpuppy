@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/*!________                        .__     __                                                                                   .__     __   ._.
+\______   \  ____  ___  __  ____  |  |  _/  |_      ______   __ __ ______  ______   ___.__.     _______   ____  ___  __  ____  |  |  _/  |_ | |
+ |       _/_/ __ \ \  \/ / /  _ \ |  |  \   __\     \____ \ |  |  \|____ \ \____ \ <   |  |     \_  __ \_/ __ \ \  \/ / /  _ \ |  |  \   __\| |
+ |    |   \|  ___/  \   / (  <_> )|  |__ |  |       |  |_> >|  |  /|  |_> >|  |_> > \___  |      |  | \/\  ___/  \   / (  <_> )|  |__ |  |   \|
+ |____|_  / \___  >  \_/   \____/ |____/ |__|   /\  |   __/ |____/ |   __/ |   __/  / ____| /\   |__|    \___  >  \_/   \____/ |____/ |__|   __
+        \/      \/                              )/  |__|           |__|    |__|     \/      )/               \/                              */
+/**
+ * Rumpled Plover Styles
+ *
+ * Styles for the 2014 design of Revolt Puppy.
+ *
+ * These styles were developed by hand by Justin McDowell. They
+ * set up the website initally for a mobile-only layout, but styles
+ * to support larger screens are sure to come down the pipe.
+ *
+ * Styles in this file are organized according to the SMACSS
+ * principles: http://smacss.com/
+ *
+ * @project    Revolt Puppy
+ * @author     Justin McDowell
+ * @copyright  2014 by the author
+ * @cssdoc     0.2.22
+ * @license    Copyrighted
+ */
+
+/**
+ * Sass Constants
+ *
+ *@section sass-constants
+ */
+$highlight: #f58553;
+$shadow: #240f27;
+$bright-highlight: hsl(56, 91%, 91%);
+$deep-shadow: #1b2324;
+
+$display-face: Chaparral Pro, Georgia, serif;
+$text-face: Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-serif;
+$small-face: Verdana, Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-serif;
+
+// Modular Scale
+// Ideal text size, px: 18
+// Important number: 800 (intended max width of images)
+// Scale 3:5 or 1.6666666667
+
+// Pixels     Ems     Ems@:;
+// 1,073.380 	59.632 	67.086
+//  *800.000 	44.444 	50 	  
+//   643.899  35.772 	40.244
+//   479.904 	26.661 	29.994
+//   386.262  21.459 	24.141
+//   287.885 	15.994 	17.993
+//   231.711  12.873 	14.482
+//   172.696 	 9.594 	10.794
+//   138.999   7.722 	 8.687
+//   103.597   5.755 	 6.475
+//    83.383 	 4.632 	 5.211
+//    62.146 	 3.453 	 3.884
+//    50.020 	 2.779 	 3.126
+//    37.280   2.071 	 2.33 
+//    30.006	 1.667 	 1.875
+//    22.364   1.242 	 1.398
+//   *18       1       1.125
+//    13.416   0.745   0.839
+//    10.798	 0.6     0.675
+//     8.048   0.447 	 0.503
+//     6.478	 0.36 	 0.405
+//     4.828   0.268 	 0.302
+//     3.886	 0.216 	 0.243
+//     2.896 	 0.161 	 0.181
+//     2.331   0.13 	 0.146
+//     1.737 	 0.097 	 0.109
+//     1.398   0.078 	 0.087
+//     1.042	 0.058 	 0.065
+
+/**
+ * Sass Mixins
+ * @section sass-mixins
+ */
+@mixin base-type-xxl{
+	font-size: 2.33rem;  // 37.28
+	line-height: 1.12660944206009;  // 42/37.28
+}
+
+@mixin base-type-xl{
+	font-size: 1.875rem;  // 30
+	line-height: 1.4;  // 42/30
+}
+
+@mixin base-type-l{
+	font-size: 1.398rem;  //22.368
+	line-height: 1.3412017167382;  // 30/22.368
+}
+
+@mixin base-type{
+	font-size: 1.125rem;  // 18
+	line-height: 1.3333333333;  // 24/18
+}
+
+@mixin type-size-s{
+	font-size: 0.839rem;  // 13.416
+	line-height: 1.34168157423971;  // 18/13.416
+}
+
+@mixin type-size-xs{
+	font-size: 0.675rem;  // 10.798
+	line-height: 1.11131691053899;  // 12/13.416
+}
+
+@mixin base-margin{
+	margin: 0.6666666667em 0;  // 12/18
+}
+
+@mixin base-margin-l{
+	//margin: 1.07315328206045em 0;  // 24/22.364
+	margin: 0.53657664103023em 0;  // 12/22.364
+}
+
+@mixin like-h1{
+	//box model
+	margin-top: 0.8em;  // 24/30
+	margin-bottom: 0.4em;  // 12/30
+	//typography
+	font-family: $display-face;
+	@include base-type-xl;
+	font-weight: normal;
+	
+	@media (min-width: 30em){
+		@include base-type-xxl;
+	}
+}
+
+@mixin like-h2{
+	//box model
+	margin-top: 1.07315328206045em;  // 24/22.364
+	margin-bottom: 0.53657664103023em;  // 12/22.364
+	//typography
+	font-family: $display-face;
+	@include base-type-l;
+	font-weight: bold;
+	
+	@media (min-width: 30em){
+		@include base-type-xl;
+	}
+}
+
+@mixin like-h3{
+	//box model
+	margin-top: 1.07315328206045em;  // 24/22.364
+	margin-bottom: 0.53657664103023em;  // 12/22.364
+	//typography
+	font-family: $display-face;
+	@include base-type-l;
+	font-weight: normal;
+	
+	@media (min-width: 30em){
+		@include base-type-xl;
+	}
+}
+
+@mixin like-h4{
+	font-family: $text-face;
+	@include base-type;
+	font-weight: bold;
+	
+	@media (min-width: 30em){
+		@include base-type-l;
+	}
+}
+
+/**
+ * Breakpoints
+ * 
+ * 30em
+ */
+
+@import "smacss/base";
+@import "smacss/layout";
+@import "smacss/modules";
+@import "smacss/states";
+
+/*This file was written by Justin McDowell. ((O)O)*/

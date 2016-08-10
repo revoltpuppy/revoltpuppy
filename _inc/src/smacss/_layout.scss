@@ -1,0 +1,65 @@
+.l-page{
+	//box model
+	min-height: 100vh;
+	//layout
+	display: flex;
+	flex-direction: column;
+	//typography
+	text-align: center;
+}
+
+/**
+ * Grid System
+ */
+.standalone-unit{
+	margin-right: 1em;
+	margin-left: 1em;
+}
+
+// Site Header
+@import "layout/header";
+
+//Site Nav
+@import "layout/nav";
+
+.l-post{
+	overflow: hidden;
+}
+
+.l-article-content{
+	/*padding: 0 1em;*/
+	margin: 0 auto 2.66666666666667em auto;  // 48/18
+	width: calc(100% - 2em);
+	max-width: 25em;
+	
+	.post-type-is-portfolio &{
+		// box model
+		width: calc(100% - 1em);
+		// layout
+		display: flex;
+	}
+}
+
+.l-secondary-content{
+	//box model
+	margin: 0 auto;
+	max-width: 320px;
+	//typography
+	text-align: left;
+}
+
+.l-site-footer{
+	//typography
+	color: $bright-highlight;
+	//backgrounds & borders
+	background-color: $deep-shadow;
+	
+	.l-site-footer-contents{
+		//box model
+		margin: 0 auto;
+		width: calc(100% - 2em);
+		max-width: 25em;
+		//typography
+		text-align: left;
+	}
+}

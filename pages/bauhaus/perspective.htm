@@ -1,0 +1,187 @@
+<html>
+<head>
+	<style>
+		body{
+			/* box model */
+			margin: 0;
+			/* typography */
+			font-family: "Avenir Next", "Avenir", "Proxima Nova", sans-serif;
+		}
+		
+		/*main{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}*/
+		
+		.container{
+			/* filters and transforms*/
+			perspective: 100vw;
+			/* animations and transitions */
+			transition: perspective 2s ease-in-out;
+			will-change: perspective;
+		}
+		
+		.container:hover{
+			perspective: 50vw;
+		}
+		
+		.heading{
+			/* box model */
+			border-bottom: 1px solid red;
+			/* filters and transforms */
+			/*-webkit-filter: blur(0);*/
+			filter: blur(0);
+			transform: translate3d(5em, 10em, -10vw) rotateY(45deg);
+			/* animations and transitions */
+			transition: -webkit-filter 2s ease-in-out,
+			                    filter 2s ease-in-out,
+			                    transform 2s ease-in-out;
+			will-change: -webkit-filter filter transform;
+		}
+		
+		.container:hover .heading{
+			transform: translate3d(5em, 10em, -31vw) rotateY(45deg);
+			/*-webkit-filter: blur(3px);*/
+			filter: blur(3px);
+		}
+		
+		.paragraph{
+			margin: 0 auto;
+			width: 50em;
+			transform: translateZ(-17vw) rotateY(-45deg);
+			transition: -webkit-filter 2s ease-in-out,
+			                    filter 2s ease-in-out,
+			                    transform 1s ease-in;
+			will-change: -webkit-filter filter transform;
+		}
+		
+		.container:hover .paragraph{
+			transform: translateZ(0) rotateY(-45deg);
+		}
+		
+		.frankie-muniz{
+			/*box model*/
+			margin: 0 auto;
+			width: 300px;
+			/*position*/
+			position: relative;
+			/*typography*/
+			text-align: center;
+			/* filters and transforms */
+			transform-style: preserve-3d;
+		}
+		
+		.frankie-head,
+		.frankie-ear-left,
+		.frankie-ear-right,
+		.frankie-nose{
+			transition: -webkit-filter 2s ease-in-out,
+			                    filter 2s ease-in-out,
+			                    transform 2s ease-in-out;
+			will-change: -webkit-filter filter transform;
+		}
+		
+		.frankie-head{
+			/*box model*/
+			width: 100%;
+			/*transforms*/
+			transform: translateZ(25vw);
+		}
+		
+		.container:hover .frankie-head{
+			transform: translateZ(18vw);
+		}
+		
+		.frankie-ear-left{
+			/*box model*/
+			width: 32%;
+			/*position*/
+			position: absolute;
+			top: 52%;
+			left: 0%;
+			/*transforms*/
+			transform: translateZ(23vw);
+		}
+		
+		.container:hover .frankie-ear-left{
+			transform: translateZ(16vw);
+			-webkit-filter: blur(1px);
+			filter: blur(1px);
+		}
+		
+		.frankie-ear-right{
+			/*box model*/
+			width: 16%;
+			/*position*/
+			position: absolute;
+			top: 50%;
+			right: 7%;
+			/*transforms*/
+			transform: translateZ(23vw);
+		}
+		
+		.container:hover .frankie-ear-right{
+			transform: translateZ(16vw);
+			-webkit-filter: blur(1px);
+			filter: blur(1px);
+		}
+		
+		.frankie-nose{
+			/*box model*/
+			width: 38%;
+			/*position*/
+			position: absolute;
+			top: 47%;
+			left: 37%;
+			/*transforms*/
+			transform: translateZ(27vw);
+		}
+		
+		.container:hover .frankie-nose{
+			transform: translateZ(20vw) translateY(-0.3em);
+			-webkit-filter: blur(0.6px);
+			filter: blur(0.33333px);
+		}
+		
+		.author-credits{
+			/* box model */
+			width: 100%;
+			/* position */
+			bottom: 0;
+			position: absolute;
+			/* typography */
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+		<div class="container">
+			<div class="heading">
+				<h1>You Are Now Entering</h1>
+			</div>
+			<div class="heading">
+				<h2>The Frankie Zone</h2>
+			</div>
+			<!--<div class="paragraph">
+				<p>Eros quia enim praesent te nisl nisl praesent inhibeo. Jumentum lobortis et haero esse wisi sit exerci suscipit magna fere sed. Facilisis feugiat valde metuo velit praesent in.</p>
+				<p>Zelus vindico defui eum huic duis tation. Torqueo aliquam vel aliquip delenit. Metuo jumentum mauris conventio jugis feugait fatua gemino ex. Tincidunt ludus ventosus genitus praemitto. Bene consequat paulatim gilvus brevitas euismod eum minim fatua probo lobortis. Rusticus ymo consequat ullamcorper abluo letatio melior foras.</p>
+				<p>Wisi iustum zelus quibus vulputate jumentum vulputate sudo. Delenit nulla nonummy damnum validus.</p>
+			</div>-->
+			<div class="frankie-muniz">
+				<img alt="" class="frankie-ear-left" src="graphics/ear-left.png"/>
+				<img alt="" class="frankie-ear-right" src="graphics/ear-right.png"/>
+				<img alt="Frankie Muniz" class="frankie-head" src="graphics/frankie-no-nose-ears.png"/>
+				<img alt="" class="frankie-nose" src="graphics/nose.png"/>
+			</div>
+		</div>
+		
+		<footer class="author-credits">
+			<p>A perspective demo by Justin McDowell. <a href="#">Learn more about CSS perspective.</a></p>
+		</footer>
+	</main>
+	
+</body>
+</html>

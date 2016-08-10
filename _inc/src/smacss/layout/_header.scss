@@ -1,0 +1,34 @@
+/**
+ * Site Header
+ *
+ * The header for the site that appears at the top of every page.
+ */
+.l-site-header{
+	//typography
+	color: $bright-highlight;
+	//backgrounds & borders
+	background-color: $deep-shadow;
+	
+	h1{
+		//box model
+		margin: 0;
+		//layout
+		display: block;
+		
+		a{
+			display: block;
+		}
+	}
+}
+			
+.site-logo{
+	//box model
+	margin: 2px;
+	max-height: 1.5rem;
+	//layout
+	display: block;
+	
+	@media all and (min-width: 30em){
+		margin: 2px auto;
+	}
+}

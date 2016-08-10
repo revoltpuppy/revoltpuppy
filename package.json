@@ -1,0 +1,26 @@
+{
+  "name": "rumpledplover",
+  "version": "0.1.0",
+  "description": "New website design for Revolt Puppy, the personal website of Justin McDowell",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Justin McDowell",
+  "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://evergreen.edu",
+  "devDependencies": {
+    "grunt": "1.0.x",
+    "grunt-contrib-jshint": "1.0.x",
+    "grunt-contrib-sass": "1.0.x",
+    "grunt-contrib-uglify": "2.0.x",
+    "grunt-postcss": "0.8.x"
+  }
+}

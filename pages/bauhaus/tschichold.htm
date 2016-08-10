@@ -1,0 +1,308 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Die Frau Ohne Namen</title>
+	<!-- Modular Scale: http://www.modularscale.com/?16&px&1.25&web&text -->
+	<style>
+		*,
+		*::before,
+		*::after{
+			box-sizing: border-box;
+		}
+		body{
+			/* box model */
+			margin: 1em 1em 0 1em;
+			font-family: "Avenir Next Condensed";
+			text-transform: uppercase;
+		}
+		p{
+			margin: 1em 0;
+		}
+		h1{
+			/* box model */
+			margin: 0;
+			/* typography */
+			font-size: 5.96rem;  /* Step 9 */
+			line-height: 0.8;
+		}
+		h2{
+			/* box model */
+			margin: 0;
+			/* typography */
+			color: red;
+			font-size: 3.815rem;  /* Step 7 */
+			line-height: 0.8;
+		}
+		article{
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-wrap: wrap;
+			flex-wrap: wrap;
+		}
+		/*header{
+			transform: perspective(100vw) rotateY(45deg) translate(2vw, 1.5em);
+		}*/
+		.title-box{
+			/* box model */
+			margin-top: 0.5em;
+			/* layout */
+			display: -webkit-flex;
+			display: flex;
+		}
+		.title,
+		.subheading{
+			/*-webkit-flex-grow: 1;
+			flex-grow: 1;*/
+		}
+		.subheading{
+			margin-left: 2.8em;
+		}
+		.title-box::after,
+		.subheading-box::after{
+			/* box model */
+			border-width: 1px 0;
+			width: 100%;
+			/* layout */
+			-webkit-flex: 1 1 0;
+			flex: 1 1 0;
+			/* backgrounds & borders */
+			border-color: red;
+			border-style: solid;
+			/* miscellaneous */
+			content: "";
+		}
+		.production-information{
+			/* box model */
+			width: 28em;
+			/* layout */
+			-webkit-order: 3;
+			order: 3;
+			/* position */
+			/*position: absolute;
+			right: 0;
+			bottom: 0;*/
+			/* backgrounds and borders */
+			/*background-color: silver;*/
+      /* typography */
+      text-align: center;
+		}
+		.production-information::before,
+		.feature::before{
+			/* box model */
+      width: 5.2em;
+      height: 18em;
+		}
+		.production-information::before{
+			/* layout */
+			float: left;
+			/* miscellaneous */
+			content: "";
+			-webkit-shape-outside: polygon(0 0, 100% 0, 25% 100%, 0 100%);
+			shape-outside: polygon(0 0, 100% 0, 25% 100%, 0 100%);
+		}
+		
+		.production-information p{
+			margin: 0;
+		}
+		
+		.studio{
+			margin-bottom: 2em;
+		}
+		.feature::before{
+			/* layout */
+			float: right;
+			/* miscellaneous */
+			content: "";
+			-webkit-shape-outside: polygon(0 0, 100% 0, 0 100%, 75% 100%);
+			shape-outside: polygon(0 0, 100% 0, 100% 100%, 75% 100%);
+		}
+		
+		/*.production-information::before,
+		.feature::before{
+			-webkit-shape-outside: polygon(0 0, 100% 0, 50% 100%);
+			shape-outside: polygon(0 0, 100% 0, 50% 100%);
+		}*/
+		
+		.feature{
+			padding: 0 1em 1em;
+		}
+		.location,
+		.sideshow-title{
+			font-size: 2.441rem;  /* Step 5 */
+			font-weight: normal;
+		}
+		.start-times{
+			display: flex;
+			justify-content: space-between;
+		}
+		.minutes{
+			font-size: 0.5em;
+			vertical-align: super;
+		}
+		.sep{
+			display: none;
+		}
+		.sideshow{
+			/* box model */
+			padding: 1em;
+			background-color: silver;
+		}
+		.publication-information{
+			/* layout */
+			-webkit-align-self: flex-end;
+			align-self: flex-end;
+			-webkit-flex-grow: 1;
+			flex-grow: 1;
+			/* position */
+			/*position: absolute;
+			bottom: 0;*/
+			/* typography */
+			color: red;
+			/*font-size: 0.5rem;*/
+		}
+		
+		/**
+		 *Shared perspective
+		 */
+		header{
+			transform: none;
+			perspective: 100vw;
+			perspective-origin: right top;
+			transition: perspective 2s ease-in-out;
+			will-change: perspective;
+		}
+		
+		header:hover{
+			perspective: 150vw;
+		}
+		
+		.title-box{
+			transform: rotateY(45deg) translate(13.5vw, 1.5em);
+		}
+		
+		.collage{
+			/* layout */
+			display: flex;
+			display: -webkit-flex;
+			flex-direction: row;
+			/* filters and transforms */
+			transform-style: preserve-3d;
+		}
+		
+		.frame-lg,
+		.frame-md,
+		.frame-sm{
+			/* animations and transitions */
+			transition: -webkit-filter 2s ease-in-out,
+			                    filter 2s ease-in-out;
+			will-change: -webkit-filter filter;
+		}
+		.collage > div > img{
+			margin-top: 7em;
+			width: 100%;
+		}
+		.train{
+			/* layout */
+			flex-basis: 66%;
+			/* position */
+			z-index: 4;
+			/* transforms */
+			/*transform: translateZ(10vw);*/
+		}
+		.frame-lg{
+			/* box model */
+			margin-left: -10em;
+			/* position */
+			z-index: 3;
+			/* filters and transforms */
+			-webkit-filter: blur(1px);
+			filter: blur(1px);
+			transform: translateZ(-5vw);
+		}
+		header:hover .frame-lg{
+			-webkit-filter: blur(0);
+			filter: blur(0);
+		}
+		.frame-md{
+			/* position */
+			z-index: 2;
+			/* filters and transforms */
+			-webkit-filter: blur(1px);
+			filter: blur(1px);
+			transform: translateZ(-20vw);
+		}
+		header:hover .frame-md{
+			-webkit-filter: blur(0);
+			filter: blur(0);
+		}
+		.frame-sm{
+			/* position */
+			z-index: 1;
+			/* filters and transforms */
+			-webkit-filter: blur(2px);
+			filter: blur(2px);
+			transform: translateZ(-40vw);
+		}
+		header:hover .frame-sm{
+			-webkit-filter: blur(0);
+			filter: blur(0);
+		}
+	</style>
+</head>
+<body>
+	<article>
+		<header>
+			<div class="title-box">
+				<h1 class="title">Die Frau Ohne Namen</h1>
+			</div>
+			<div class="title-box">
+				<h2 class="subheading">Zweiter Teil</h2>
+			</div>
+			<div class="collage">
+				<div class="train">
+					<img alt="" src="graphics/train.png"/>
+				</div>
+				<div class="frame-lg">
+					<img alt="" src="graphics/frame-lg.png"/>
+				</div>
+				<div class="frame-md">
+					<img alt="" src="graphics/frame-md.png"/>
+				</div>
+				<div class="frame-sm">
+					<img alt="" src="graphics/frame-sm.png"/>
+				</div>
+			</div>
+		</header>
+		<section class="production-information">
+			<div class="feature">
+				<div class="studio">Georg Jacobys Weltreisefilm</div>
+				<div class="location">Phoebus-Palast</div>
+				<div class="start-times">
+					<p>
+						Anfangszeiten: 4,
+						6<span class="sep">:</span><span class="minutes">15</span>,
+						8<span class="sep">:</span><span class="minutes">30</span>
+					</p>
+					<p>
+						Sonntags:
+						1<span class="sep">:</span><span class="minutes">45</span>, 4,
+						6<span class="sep">:</span><span class="minutes">15</span>,
+						8<span class="sep">:</span><span class="minutes">30</span>
+					</p>
+				</div>
+			</div>
+			<div class="sideshow">
+				<p>In jeder vorstellung aufführung von</p>
+				<p class="sideshow-title">Honegger: Pacific 231</p>
+				<p>Diese zeitgemaesse musikschoepfung wird von einer eigens dazu komponierten licht-dichtung (film) begleitet</p>
+			</div>
+		</section>
+		<footer class="publication-information">
+			<p>
+				<span class="design">Entwurf: Jan Tschichold, Planegg b. Mch.</span>
+				<span class="printer">Druck: Gebr. Obpacher AG. München</span>
+			</p>
+		</footer>
+	</article>
+</body>
+</html>

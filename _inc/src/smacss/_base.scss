@@ -1,0 +1,190 @@
+html{
+	// layout
+	box-sizing: border-box;
+	// typography
+	font-size: 100%;
+}
+
+*,
+*::before,
+*::after{
+	box-sizing: inherit;
+}
+
+body{
+	// box model
+	margin: 0;
+	// typography
+	color: $bright-highlight;
+	font-family: $text-face;
+	text-rendering: optimizeLegibility;
+	// backgrounds and borders
+	background-color: $shadow;
+	
+	&.front-page{
+		// backgrounds and borders
+		background-image: linear-gradient(172deg, $bright-highlight 0, $shadow 16em);
+	}
+}
+
+body,
+input,
+button{
+	// typography
+	/**
+	 * Font Feature Settings
+	 * liga - Standard Ligatures
+	 * onum - Oldstyle Figures
+	 *
+	 * See: http://www.microsoft.com/typography/otspec/featurelist.htm for full list
+	 */
+	@include base-type;
+	font-variant-ligatures: common-ligatures;
+	font-variant-numeric: oldstyle-nums;
+	 -webkit-font-smoothing: antialiased; //Reduce text chubbiness in Safari, Chrome
+	-moz-osx-font-smoothing: grayscale; //Reduce text chubbiness in Firefox
+	// backgrounds & borders
+	background-color: $shadow;
+	
+	@media (min-width: 30em){
+		@include base-type-l;
+	}
+}
+
+main{
+	// layout
+	flex: 1;
+	// typography
+	text-align: left;
+	// backgrounds & borders
+	//background-color: $bright-highlight;
+	//background-image: linear-gradient(transparentize($bright-highlight, 1), $bright-highlight 3px);
+}
+
+img,
+input,
+textarea{
+	max-width: 100%;
+}
+
+p{
+	@include base-margin;
+	
+	@media (min-width: 30em){
+		@include base-margin-l;
+	}
+	
+	+ p{
+		text-indent: 1em;
+	}
+}
+
+h1{
+	@include like-h1;
+}
+
+h2{
+	@include like-h2;
+}
+
+h3{
+	@include like-h3;
+}
+
+h4{
+	@include like-h4;
+}
+
+ul,
+ol,
+dl{
+	@include base-margin;
+}
+
+small,
+figcaption,
+.license{
+	@include type-size-xs;
+	
+	@media (min-width: 30em){
+		@include type-size-s;
+	}
+}
+
+figure{
+	margin: 0;
+}
+
+a,
+a:visited{
+	color: $highlight;
+	font-style: italic;
+	text-decoration: none;
+}
+a:hover{
+	color: mix($bright-highlight, $highlight, 66%);
+}
+a:focus,
+a:active{
+	
+}
+
+input,
+textarea{
+	// box model
+	border: 1px solid $highlight;
+	width: auto;
+	// typography
+	color: $highlight;
+	// backgrounds and borders
+	background-color: $shadow;
+}
+
+input[type="text"],
+input[type="email"],
+textarea{
+	padding: 0 .5em;
+}
+
+textarea{
+	font-family: $text-face;
+}
+
+table{
+	// box model
+	width: 100%;
+	// typography
+	@include type-size-s;
+	font-variant-numeric: tabular-nums;
+	// table
+	border-collapse: collapse;
+	
+	@media all and (min-width: 30em){
+		@include base-type;
+	}
+}
+
+caption{
+	font-style: italic;
+}
+
+th{
+	padding: 1.67710196779964em 1em 0.40995825879547em 0;  // 22.5/13.416 5.5/13.416
+	
+	@media all and (min-width: 30em){
+		padding: 1.3333333333em 1em 0.5555555556em 0;  // 24/18 10/18
+	}
+}
+
+td{
+	border-top: 1px solid $shadow;
+	padding: 0.55903398926655em 1em 1.6025641025641em 0;  // 7.5/13.416 21.5/13.416
+	
+	@media all and (min-width: 30em){
+		padding: 0.6666666667em 1em 1.27777777777778em 0; // 12/18 23/18
+	}
+}
+
+tbody > tr:first-child > td{
+	border-top: 2px solid $shadow;
+}

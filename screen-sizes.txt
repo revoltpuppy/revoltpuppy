@@ -1,0 +1,15 @@
+[
+	{"key":  "320x480",  "name": "iPhone 4 (1.10%)",       "width":  320, "height":  480},
+	{"key":  "320x568",  "name": "iPhone 5 (4.92%)",       "width":  320, "height":  568},
+	{"key":  "360x640",  "name": "Elaine's phone (2.94%)", "width":  360, "height":  640},
+	{"key":  "375x667",  "name": "iPhone 6 (2.42%)",       "width":  375, "height":  667},
+	{"key":  "768x1024", "name": "iPad (1.54%)",           "width":  768, "height": 1024},
+	{"key": "1024x768",  "name": "Med. Desktop (24.47%)",  "width": 1024, "height":  768},
+	{"key": "1280x800",  "name": "(1.98%)",                "width": 1280, "height":  800},
+	{"key": "1366x768",  "name": "(4.48%)",                "width": 1366, "height":  768},
+	{"key": "1440x900",  "name": "Macbook Air (4.04%)",    "width": 1440, "height":  900},
+	{"key": "1680x1050", "name": "(1.69%)",                "width": 1680, "height": 1050},
+	{"key": "1920x1080", "name": "Lg. Desktop (3.16%)",    "width": 1920, "height": 1080},
+	{"key": "1920x1200", "name": "(1.03%)",                "width": 1920, "height": 1200},
+	{"key": "2560x1440", "name": "Small iMac (1.98%)",     "width": 2560, "height": 1440}
+]

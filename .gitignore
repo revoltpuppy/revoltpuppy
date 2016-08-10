@@ -1,4 +1,25 @@
 .htaccess
+.sass-cache
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+
+libs
+
+// Textpattern stuff
 css.php
 rpc/
 sites/site*/admin/
@@ -9,3 +30,9 @@ sites/site*/public/theme/
 textpattern/
 HISTORY.txt
 README.txt
+
+// Mac crap
+.DS_Store
+
+// PC crap
+thumbs.db

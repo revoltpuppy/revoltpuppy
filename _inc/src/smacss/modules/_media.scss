@@ -1,0 +1,80 @@
+/**
+* Media Block
+*
+* A common pattern wherein copy is floated next to a graphic.
+*
+* @section mod-media
+*/
+.media{
+	display: -webkit-flex; //Safari
+	display:         flex; //W3C
+	//layout
+}
+.media-img,
+.media-img:link{
+	//box model
+	border-bottom-width: 0;
+	margin: 0;
+	margin-bottom: 1.071428571428571em; //15px
+	padding-right: 1.071428571428571em; //15px
+	max-width: 31.3333333333%;
+	//layout
+	-webkit-flex-shrink: 0; //Do not allow the image to shrink. Note: this does respect the max-width property.
+	        flex-shrink: 0; //W3C
+	
+	@media screen and (min-width: 30em){
+		padding-right: 0.882352941176471em; //15px
+	}
+}
+
+//Vertically center .media-img. Extends .media-img or .media-body.
+.media-child-alt{
+	-webkit-align-self: center; //Safari
+	        align-self: center; //W3C
+}
+
+.media-img img{
+	margin-top: 0.46875rem; //Align the .media-body content with the .media-img content.
+	display: block;
+}
+
+.media-img-icon{
+	max-height: 3.75rem;
+}
+
+.media-body{
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+.media-body :first-child{
+	margin-top: 0.46875rem; //Align the .media-body content with the .media-img content.
+}
+
+//Put .media-img on the right. Extends .media
+.media-alt{
+	-webkit-flex-direction: row-reverse;
+	        flex-direction: row-reverse;
+}
+.media-alt .media-img{
+	margin-right: 0;
+	margin-left: 2%;
+}
+
+//Put .media-img on the top. Extends .media
+.media-column{
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-align-items: stretch;
+	        align-items: stretch;
+	
+	.media-img{
+		padding-right: 0;
+		max-width: 100%;
+		text-align: center;
+		
+		img{
+			margin: 0 auto;
+		}
+	}
+}

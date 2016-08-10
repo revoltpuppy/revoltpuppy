@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Marianne Brandt</title>
+	<style>
+		*,
+		*::before,
+		*::after{
+			box-sizing: border-box;
+		}
+		/**
+		 * Modular Scale
+		 * http://www.modularscale.com/?20&px&1.25&web&text
+		 */
+		 
+		body{
+			/* box model */
+			border-top:  1em solid black;
+			margin: 0;
+			/*grid-template-rows: 36vh 36vh 9.5vh 9.5vh;*/
+			/* typography */
+			font-family: "Avenir Next", "Avenir", "Proxima Nova", sans-serif;
+			font-size: 1.25rem;
+			font-feature-settings: "onum";
+			font-variant-numeric: oldstyle-nums;
+		}
+		
+		h1,
+		h2,
+		h3{
+			margin: 0;
+		}
+		
+		h1{
+			/* box model */
+			margin-top: 0.5em;
+			/* layout */
+			display: inline-block;
+			/* typography */
+			font-size: 3.815rem;
+			letter-spacing: 0.075em;
+			text-transform: uppercase;
+			
+		}
+		
+		h2{
+			/* typography */
+			font-size: 3.052rem;
+		}
+		
+		.dates{
+			/* layout */
+			display: inline-block;
+			/* typography */
+			letter-spacing: 0.066em;
+		}
+		
+		.subheading{
+			margin-bottom: 2em;
+		}
+		
+		h3{
+			/* typography */
+			font-size: 2.441rem;
+		}
+		
+		figcaption,
+		.citation{
+			font-size: 0.8em;
+		}
+		
+		small{
+			font-size: 0.8rem;
+		}
+		
+		img{
+			max-width: 100%;
+		}
+		
+		article{
+			/* box model */
+			margin: 0 1vw;
+			/* layout */
+			display: grid;
+			grid-gap: 0 3vw;
+			grid-template-columns: 17.2vw 17.2vw 17.2vw 17.2vw 17.2vw;
+			grid-template-rows: auto;
+		}
+		
+		article > *{
+			background-color: ;
+		}
+		
+		header{
+			/* box model */
+			border-right: 1em solid black;
+			/* layout */
+			grid-column: 1 / 5;
+		}
+		
+		.portrait{
+			grid-column-start: 1;
+			grid-column-end: 2;
+			grid-column: 1 / 2;
+		}
+		
+		.container{
+			/* box model */
+			border-width: 1em 1em 0 0;
+			padding-right: 1em;
+			/* layout */
+			grid-column: 2 / 5;
+			/* backgrounds & borders */
+			border-color: black;
+			border-style: solid;
+		}
+		
+		.container:first-line{
+			font-weight: bold;
+		}
+		
+		
+		.intro::before{
+			/* box model */
+			/*height: 100%;
+			min-height: 21em;
+			width: 100%;*/
+			/* layout */
+			/*float: left;*/
+			/* miscellaneous */
+			/*content: "";*/
+			/*-webkit-shape-outside: polygon(0 36%, 5% 44%, 5% 68%, 3% 82%, 5% 100%, 0 100%);
+			shape-outside: polygon(0 36%, 5% 44%, 5% 68%, 3% 82%, 5% 100%, 0 100%);*/
+		}
+		
+		aside{
+			grid-column: 5 / 6;
+			grid-row: 1 / 4;
+			position: relative;
+		}
+		
+		footer{
+			grid-column: 2 / 5;
+		}
+		
+		figure{
+			margin: 0;
+		}
+		
+		.portrait-photo{
+			max-width: 100%;
+		}
+		
+		.intro{
+			font-size: 1.563rem;
+		}
+		
+		.teapot{
+			/* box model */
+			width: 50%;
+			/* layout */
+			float: right;
+			position: relative;
+			shape-outside: ellipse();
+		}
+		
+		.teapot figcaption{
+			/* box model */
+			width: 55.75%;
+			/* layout */
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+		
+		.teapot figcaption p{
+			/* box model */
+			margin: 0 1em 0 0;  /* Sets up box to be rotated nicer */
+			/* layout */
+			float: right;
+			transform: rotate(90deg);
+			transform-origin: bottom right;
+		}
+		
+		q{
+			position: relative;
+			quotes:"“" "”" "“" "’";
+		}
+		.pull-box::before{
+			/* box model */
+			margin-left: -2ch;
+			width: 1ch;
+			/* position */
+			position: absolute;
+			left: 0;
+			/* typography */
+			color: red;
+			font-family: "Avenir Next";
+			font-size: 9.313rem;
+			font-weight: bold;
+			line-height: 1;
+			text-align: right;
+			/* miscellaneous */
+			content: "“";
+		}
+		q::before{
+			display: none;  /* Removes opening quote from first-letter consideration */
+			/*content: "";*/  /* Works in Firefox, but Chrome still counts it as first-letter */
+		}
+		q::after{
+			content: "”"; /* Overrides hiding of closing quote when q::before display is none */
+		}
+		
+		.pull-quote{
+			font-family: "Avenir Next Condensed";
+			font-size: 2.441rem;
+		}
+		
+		.pull-quote q{
+			display: block;
+		}
+		
+		/*.pull-box:first-letter,*/  /* Works in Chrome, but not in Firefox */
+		.pull-quote q:first-letter{
+			/* box model */
+			//border: 1px solid green;
+			margin-left: -1ch;
+			/* layout */
+			float: left;
+			position: absolute;
+			left: 0;
+			/* typography */
+			color: red !important;
+			font-family: "Avenir Next";
+			font-size: 9.313rem;
+			font-weight: bold;
+			line-height: 0.75;  /* Aligns with Firefox */
+		}
+		
+		.citation cite::before{
+			/* box model */
+			margin-left: -1ch;
+			/* miscellaneous */
+			content: "—";
+		}
+	</style>
+</head>
+<body>
+
+	<main>
+		<article>
+			<header>
+				<h1>Marianne Brandt</h1>
+				<h2 class="dates">1893–1983</h2>
+				<h2 class="subheading">A Gifted, but Tragic Bauhäusler</h2>
+			</header>
+			<figure class="portrait">
+				<img class="portrait-photo" src="graphics/marianne-brandt.jpg"/>
+				<figcaption class="portrait-credit">
+					<p>
+						Marianne Brandt.
+						<cite>Photographer unknown.</cite> <small>Source: <a href="http://www.pamono.com/designers/marianne-brandt">Pamono</a></small>.
+					</p>
+				</figcaption>
+			</figure>
+			<div class="container">
+				<div>
+					<p class="intro">Marianne Brandt was an artist and designer at Bauhaus, and the first woman to join their metalworking program.</p>
+					<p>Bauhaus was a very progressive art school for its time, but in some ways it was still very conservative. While it started out encouraging artists of any gender to attend, it became clear that the presence of men was more acceptable than women. Over the course of its existence, women shrank from about half of the the Bauhaus’s ranks down to about a third by the end <small>(Droste, 28)</small>. Furthermore, women were pushed into more “feminine” studies, like ceramics weaving, and discouraged from pursuing other crafts. Nevertheless, Marianne Brandt persevered and made her mark as the first woman admitted into the metalworking program <small>(Rawsthorn)</small>.</p>
+					
+					<figure class="teapot">
+						<img alt="" src="graphics/teapot.png" />
+						<figcaption>
+							<p>
+								<!--The Model No. MT 49 tea infuser.-->
+								<small>Source: <a href="http://www.metmuseum.org/toah/works-of-art/2000.63a-c/">The Met</a></small>
+							</p>
+						</figcaption>
+					</figure>
+					
+					<p>From 1924–1929, Marianne Brandt studied under designer László Moholy-Nagy. In her time there, Brandt created some of the school’s most iconic products, including a teapot, called the Model No. MT49 tea infuser, which she made in 1924 <small>(“Marianne Brandt”, The Met)</small>. At the height of what we now usually regard as the <i>Bauhaus style</i> art and design were to be composed of simple parts. This ideal meant that the students’ creations could be mass produced, as well as be modular and therefore adapted to fit new needs. Perhaps most representative of this theory of design is Brandt’s teapot, made primarily of basic shapes, such as circles, cylinders, and orbs <small>(Droste, 36)</small>. Ironically, however, the design was still deemed too complicated, and it never made it into mass production. Just seven of them were produced by hand, and today, they are prized and valuable artifacts <small>(Rawsthorn)</small>.</p>
+					
+					<p>Brandt was prolific at Bauhaus. In addition to industrial design, she also had a hand in furniture design, photography and photomontage, painting, and interior design. In 1926, Brandt was made deputy head of the metal workshop. There, she oversaw most of the important contracts for the school’s industrial partnerships <small>(“Marianne Brandt”, Wikipedia)</small>.</p>
+					
+					<p>While she amassed a dedicated following of students, she struggled to find employment during the Third Reich. She would never achieve notoriety until after her death <small>(“Marianne Brandt”, Wikipedia)</small>. In 2007, one of her teapots sold for a record-breaking $361,000 at a Sotheby’s auction <small>(Rawsthorn)</small>.</p>
+				</div>
+			</div><!-- /.container-->
+			
+			<aside class="pull-box">
+				<p class="pull-quote">
+					<q>Brandt [created] an abstract sculpture which, at the same time, is a teapot. The flat and spherical shapes harmonize perfectly.</q>
+				</p>
+				<p class="citation">
+					<cite>Christian Witt-Dörring</cite>, curator of decorative arts at the Neue Galerie in New&nbsp;York <small>(Rawsthorn)</small>.
+				</p>
+			</aside>
+			
+			<footer class="">
+				<div class="author-credits">
+					<p>By Justin McDowell.</p>
+				</div>
+				<section class="bibliography">
+					<h3>Bibliography</h3>
+					<ol>
+						<li>
+							<cite>Droste, Magdalena</cite>.
+							<i>The Bauhaus, 1919–1933: Reform and Avant-Garde</i>. Ed. Peter Gössel. Köln: Taschen, 2015. Print.
+						</li>
+						<li>
+							“Marianne Brandt.”
+							<cite>Wikipedia</cite>. Wikimedia Foundation, n.d. Web. 08 June 2016. 
+						</li>
+						<li>
+							“Marianne Brandt | Tea Infuser and Strainer”
+							<cite>The Met</cite>. The Metropolitan Museum Of Art, n.d. Web. 08 June 2016.
+						</li>
+						<li>
+							<cite>Rawsthorn, Alice.</cite> “The Tale of a Teapot and Its Creator.” Editorial. <i>The New York Times</i> 16 Dec. 2007, Fashion & Style sec.: n. pag.
+						</li>
+					</ol>
+				</section><!-- /.bibliography -->
+			</footer>
+		</article>
+	</main>
+	
+</body>
+</html>

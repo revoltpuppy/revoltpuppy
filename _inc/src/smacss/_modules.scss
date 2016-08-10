@@ -1,0 +1,280 @@
+@import "modules/media";
+
+/**
+ * Lists
+ */
+.element-list{
+	//box model
+	margin-left: 0;
+	padding-left: 0;
+	//list
+	list-style-type: none;
+}
+.inline-list{
+	//box model
+	margin-left: 0;
+	padding-left: 0;
+	list-style-type: none;
+	
+	li{
+		display: inline;
+		
+		&::after{
+			content: ", ";
+		}
+		
+		&:last-child{
+			&::before{
+				content: "& "
+			}
+			
+			&::after{
+				content: "";
+			}
+		}
+	}
+}
+
+
+.homepage-intro{
+	// box model
+	margin: 2em auto 0 auto;
+	width: calc(100% - 2em);
+	max-width: 25em;
+	// layout
+	display: flex;
+	flex-direction: column;
+	//flex-wrap: wrap;
+	// typography
+	text-align: left;
+	
+	@media (min-width: 30em){
+		//max-height: 13.94849785407725em;  // 312/22.368 - 312 is divisible by 24
+		flex-direction: row;
+	}
+}
+
+.homepage-portrait{
+	//typography
+	text-align: center;
+	
+	@media (min-width: 30em){
+		// box model
+		margin-right: 2em;
+		width: calc(33.3333333333% - 1em);
+		// layout
+		//float: left;
+	}
+	
+	img{
+		min-height: 9.3em;  // 18/168 - 168 is divisible by 24
+		max-height: 33vh;
+		//max-width: 150px;
+		
+		@media (min-width: 30em){
+			max-height: 13.94849785407725em;  // 312/22.368 - 312 is divisible by 24
+		}
+	}
+}
+
+.front-matter{
+	
+	@media (min-width: 30em){
+		max-width: calc(66.6666666667% - 1em);
+	}
+}
+
+.homepage-intro-copy{
+	//box model
+	//margin: 0 1em;
+	//width: calc(100% - 2em);
+	//max-width: 320px;
+}
+
+.testimonials{
+	
+	h2{
+		color: $bright-highlight;
+		@include like-h1;
+	}
+}
+
+/**
+ * Compliment
+ *
+ * For the section of the page where people say nice things about me.
+ */
+.compliment{
+	margin: 1em 0 2em 0;
+	
+	.media-img{
+	
+		figcaption{
+			//box model
+			margin-left: 1em;
+			//typography
+			@include type-size-s;
+		}
+	}
+	.media-body{
+		//box model
+		padding: 0 1em;
+		//position
+		position: relative;
+		//backgrounds & borders
+		background-color: $bright-highlight;
+		border-radius: .5em 0 0 .5em;
+		
+		&::before{
+			position: absolute;
+			left: -15px;
+			top: 42px;
+			content: url("/images/balloon-tail.png");
+		}
+	}
+}
+
+.balancer{
+	//box model
+	margin: 0 auto;
+	width: calc(100% - 2em);
+	max-width: 25em;
+	//layout
+	align-items: baseline;
+	display: flex;
+	
+	:first-child{
+		flex: 1;
+	}
+}
+
+.article-image{
+	// box model
+	max-width: 800px;
+	margin: 0 auto;
+	// typography
+	text-align: center;
+	
+	img{
+		//box model
+		margin: 0 auto;
+		//layout
+		display: block;
+	}
+}
+
+.post-type-is-photo .article-image img,
+.article-list .article-image img{
+	// box model
+	border: 2px solid $deep-shadow;
+	// backgrounds & borders
+	border-radius: 2px;
+}
+
+.datestamp{
+	color: mix($bright-highlight, $shadow, 50%);
+}
+
+.post-type-is-photo,
+.post-type-is-portfolio{
+	background-color: $shadow;
+	//background-image: linear-gradient(transparentize($shadow, 1), $shadow 3px);
+}
+
+.portfolio-content{
+	// box model
+	border-right: 9px solid $highlight;
+	border-left: 9px solid $highlight;
+	padding-right: calc(1em - 9px);
+	padding-left: calc(1em - 9px);
+	width: 100%;
+	// layout
+	//overflow: hidden;
+	// backgrounds & borders
+	background-color: $bright-highlight;
+	border-radius: 0 0 2px 2px;
+	
+	@media (min-width: 30em){
+		padding-right: 1em;
+		padding-left: 1em;
+	}
+}
+
+.post-type-is-text{
+	background-color: $bright-highlight;
+}
+
+.box{
+		// box model
+		border: 1px solid mix($bright-highlight, $highlight, 66%);
+		border-right-width: 0;
+		border-left-width: 0;
+		padding: calc(0.3333333333em - 1px) 0 calc(0.6666666667em - 1px);
+		// backgrounds and borders
+		border-radius: 2px;
+	
+	@media (min-width: 30em){
+		// box model
+		border-width: 2px;
+		padding: calc(0.3333333333em - 2px) calc(.6666666667em - 2px) calc(0.6666666667em - 2px);
+	}
+}
+
+.supplement{
+	// box model
+	margin-bottom: 1em;
+	margin-right: -0.5em;
+	margin-left: 0.5em;
+	width: 66.6666666667%;
+	// layout
+	float: right;
+	
+	@media (min-width: 30em){
+		// box model
+		margin-left: 1em;
+		width: 50%;
+	}
+}
+
+@import "modules/comments";
+
+/**
+ * Videos
+ */
+.video-container{
+	// box model
+	height: 0;
+	width: 100%;
+	// layout
+	overflow: hidden;
+	position: relative;
+
+	iframe{
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+	}
+}
+
+.video-container-3-4{  // 3:4 aspect ratio
+	padding-bottom: 75%;
+}
+
+.video-container-16-9{  // 16:9 aspect ratio
+	padding-bottom: 56.25%;
+}
+
+.code-sample{
+	// box model
+	border: 1px solid  mix($bright-highlight, $highlight, 66%);
+	padding-left: 1ch;
+	// layout
+	overflow-x: auto;
+	
+	@media (min-width: 30em){
+		// box model
+		border-width: 2px;
+	}
+}

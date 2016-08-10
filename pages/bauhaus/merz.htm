@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Merz</title>
+		<style>
+			*,
+			*::before,
+			*::after{
+				box-sizing: border-box;
+			}
+			body{
+				/* box model */
+				margin: 0;
+				/*padding-bottom: 1vh;*/
+				/* typography */
+				color: indigo;
+				font-family: "Avenir";
+				/* backgrounds & borders */
+				background-color: #fcfad9;
+				/* misc */
+				box-shadow: 0 0 50px #ddc875 inset;
+			}
+			header,
+			aside,
+			main{
+				/*mix-blend-mode: multiply;*/
+			}
+			
+			/**
+			 * Cover Header
+			 */
+			.document-header{
+				/* box model */
+				min-height: 100vh;
+				/* layout */
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				/* typography */
+				text-align: center;
+				text-transform: uppercase;
+			}
+			.title-issue{
+				/* layout */
+				-webkit-align-items: baseline;
+				align-items: baseline;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-justify-content: center;
+				justify-content: center;
+				/* typography */
+				font-size: 5vw;
+				line-height: 1;
+				vertical-align: baseline;
+			}
+			.title{
+				/* box model */
+				margin: 0;
+				/* layout */
+				-webkit-order: 2;
+				order: 2;
+				/* typography */
+				font-family: "Avenir Next Condensed";
+				font-weight: 600;
+				letter-spacing: 0.05em;
+			}
+			.issue-num-1,
+			.issue-num-2{
+				font-family: "Bodoni 72";
+				font-weight: bold;
+			}
+			.issue-num-1{
+				-webkit-order: 1;
+				order: 1;
+			}
+			.issue-num-2{
+				-webkit-order: 3;
+				order: 3;
+			}
+			.author-credits{
+				/* box model */
+				margin-left: 1vw;
+				margin-right: 1vw;
+				/* typography */
+				font-size: 2.5vw;
+				letter-spacing: 0.12em;
+			}
+			
+			/**
+			 * Cover body
+			 */
+			main{
+				/* box model */
+				/* position */
+				position: relative;
+				
+			}
+			.main-body{
+				/* box model */
+				border-left: 4vmin solid;
+				margin: 0 0 0 auto;
+				min-height: 100vw;
+			}
+			@media screen and (min-width: 48em){
+				.main-body{
+					max-width: 80vw;
+				}
+			}
+			.teaser{
+				/* box model */
+				margin-top: 0;
+				margin-bottom: 0;
+				/* typography */
+				font-size: 7.45vw;
+			}
+			
+			@media screen and (min-width: 48em){
+				.teaser{
+					font-size: 5.5vw;
+				}
+			}
+			.teaser > span{
+				/* box model */
+				border-bottom: 4vmin solid indigo;
+				padding: 0 4vw 0 2vw;
+				/* layout */
+				display: block;
+				/* typography */
+				color: red;
+				line-height: 1.2;
+				text-align: justify;
+				-moz-text-align-last: justify;
+				text-align-last: justify;
+				text-transform: uppercase;
+				/*letter-spacing: 0.05em;*/
+			}
+			.teaser-line-3{
+				letter-spacing: 0.06em;
+			}
+			@media screen and (min-width: 48em){
+				.teaser-line-3{
+					letter-spacing: 0.1em;
+				}
+			}
+			
+			.teaser-line-4{
+				letter-spacing: 0.15em;
+			}
+			@media screen and (min-width: 48em){
+				.teaser-line-4{
+					letter-spacing: 0.22em;
+				}
+			}
+			
+			.teaser-line-5{
+				letter-spacing: 0.05em;
+			}
+			@media screen and (min-width: 48em){
+				.teaser-line-5{
+					letter-spacing: 0.09em;
+				}
+			}
+			
+			.teaser-line-6{
+				letter-spacing: 0.17em;
+			}
+			@media screen and (min-width: 48em){
+				.teaser-line-6{
+					letter-spacing: 0.21em;
+				}
+			}
+			
+			.teaser > span:last-child{
+				/* box model */
+				border-bottom-width: 0;
+				/* typography */
+				letter-spacing: 0.01em;
+			}
+			@media screen and (min-width: 48em){
+				.teaser > span:last-child{
+					letter-spacing: 0.04em;
+				}
+			}
+			
+			.citation,
+			.french-translation{
+				/* box model */
+				margin-right: 2vw;
+				margin-left: 1vw;
+				/* typography */
+				font-size: 2vw;
+			}
+			.citation{
+				text-align: right;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+			.french-translation{
+			}
+			.miniature{
+				font-size: 0.5em;
+			}
+			.latin{
+				color: red;
+				font-size: 2em;
+				font-style: normal;
+				text-transform: uppercase;
+			}
+			
+			/**
+			 * Footer publishing information
+			 */
+			.publishing-information{
+				/* box model */
+				margin: 0 1vw;
+				/* layout */
+				display: flex;
+				justify-content: space-between;
+				/* typography */
+				font-size: 2.5vw;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				line-height: 1.3;
+				/* backgrounds & borders*/
+				/*background-color: white;   temp */
+			}
+			@media screen and (min-width: 48em){
+				.publishing-information{
+					/* position */
+					position: absolute;
+					top: 0;
+					left: 0;
+					/* transforms */
+					transform: rotate(-90deg) translateX(-100%);
+					transform-origin: top left;
+				}
+			}
+			
+			.publishing-credits{
+				/* box model */
+				height: 18vw;
+				/* layout */
+				display: flex;
+				flex-direction: column;
+				/* typography */
+				/*font-size: 2.5vw;*/
+				text-align: justify;
+				-moz-text-align-last: justify;
+				text-align-last: justify;
+			}
+			@media screen and (min-width: 48em){
+				.publishing-credits{
+					order: 2;
+				}
+			}
+			.publisher-heading{
+				/* box model */
+				margin-top: 0;
+				margin-bottom: 0;
+				/* typography */
+				font-size: 4vw;
+				line-height: 1;
+			}
+			.publisher-credit,
+			.typographer-credit,
+			.editor-credit{
+				margin: 0;
+			}
+			.typographer-credit,
+			.editor-credit{
+				text-align: right;
+				-moz-text-align-last: right;
+				text-align-last: right;
+			}
+			.second-billing{
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				flex-grow: 1;
+			}
+			.editor-credit{
+				/* box model */
+				/* layout */
+				/*display: flex;
+				justify-content: space-between;*/
+			}
+			.issue-info{
+				/* box model */
+				min-width: 18vw;
+				/* typography */
+				line-height: 1;
+				/* backgrounds & borders*/
+				/*background-color: yellow;   temp */
+			}
+			@media screen and (min-width: 48em){
+				.issue-info{
+					/* layout */
+					order: 1;
+					/* position */
+					position: absolute;
+					/* transform */
+					transform: rotate(90deg);
+					transform-origin: top left;
+				}
+			}
+			
+			.issue-num-full,
+			.month,
+			.year{
+				font-size: 5.5vw;
+				font-weight: 100;
+				text-align: justify;
+				-moz-text-align-last: justify;
+				text-align-last: justify;
+			}
+			.month-1{
+				letter-spacing: 0.13em;
+			}
+			.month-2{
+				letter-spacing: 0.339em;
+			}
+			.year{
+				letter-spacing: 0.3em;
+			}
+			.issue-num-full{
+				/* typography */
+				font-size: 2vw;
+			}
+			@media screen and (min-width: 48em){
+				.issue-num-full{
+					/* box model */
+					margin-top: 4em;
+				}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header class="document-header">
+			<div class="title-issue">
+				<h1 class="title">Merz</h1>
+				<span class="issue-num-1">8</span>
+				<span class="issue-num-2">9</span>
+			</div>
+			<p class="author-credits">Dieses doppelheft is erschienen unter der redaktion von El Lissitzky und Kurt Schwitters</p>
+		</header>
+		<main>
+			<section class="main-body">
+				<p class="teaser">
+					<span class="teaser-line-1">Natur <span class="miniature">von lat.</span> <strong><i class="latin">nasci</i></strong></span>
+					<span class="teaser-line-2">D. I. werden oder ent.</span>
+					<span class="teaser-line-3">stehen heisst alles,</span>
+					<span class="teaser-line-4">was sich aus sich</span>
+					<span class="teaser-line-5">selbst durch eigene</span>
+					<span class="teaser-line-6">kraft entwickelt</span>
+					<span>gestaltetund bewegt</span>
+				</p>
+				<div class="citation">
+					<cite><i>Kleiner Brokhaus</i></cite>
+				</div>
+				<div class="french-translation">
+					<p lang="fr">Nature, du latin <i class="latin">nasci</i> signifie devenir, provenier, c’est à dire tout ce qui par sa propre force, se développe, se forme, se meut.</p>
+				</div>
+			</section>
+			<footer class="publishing-information">
+				<div class="publishing-credits">
+					<div class="top-billing">
+						<h2 class="publisher-heading">Redaktion des Merzverlages</h2>
+						<p class="publisher-credit">Kurt Schwitters, Hannover, Waldhausenstr. 5"</p>
+					</div>
+					<div class="second-billing">
+						<p class="typographer-credit">Typographie angegeben von El Lissitzky</p>
+						<p class="editor-credit">Herausgeber <span class="editor-name">K. Schwitters</span></p>
+					</div>
+				</div>
+				<div class="issue-info">
+					<div class="issue-num-full">
+						Band 2, Nr. 8/9
+					</div>
+					<div class="month month-1">April</div>
+					<div class="month month-2">Juli</div>
+					<div class="year">1924</div>
+				</div>
+			</footer>
+		</main>
+	</body>
+</html>
