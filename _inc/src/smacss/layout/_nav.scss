@@ -27,7 +27,7 @@
 				// box model
 				border: 2px solid $deep-shadow;
 				height: 100%;
-				padding: .5em;
+				padding: 0.5em;
 				width: 100%;
 				// layout
 				display: block;
@@ -37,16 +37,15 @@
 				text-decoration: none;
 				
 				&:hover{
-					// backgrounds and borders
+					// decoration
 					border-color: $highlight;
 				}
 				
 				&:focus,
 				&:active{
-					// box model
-					border-color: $bright-highlight;
-					// backgrounds & borders
+					// decoration
 					background-color: $highlight;
+					border-color: $bright-highlight;
 				}
 			}
 		}
@@ -56,7 +55,7 @@
 .site-nav-list-interior{
 	// box model
 	//border-bottom: 2px solid;
-	// backgrounds & borders
+	// decoration
 	background-color: $deep-shadow;
 }
 
@@ -72,8 +71,8 @@
 		li{
 			// box model
 			border: 2px solid $highlight;
-			margin: .5em 0;
-			width: calc(50% - .5rem);
+			margin: 0.5em 0;
+			width: calc(50% - 0.5rem);
 			//layout
 			flex-grow: 0;
 			// typography

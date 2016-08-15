@@ -110,11 +110,11 @@ p + p {
 }
 
 h1 {
+  font-size: 1.875rem;
+  line-height: 1.4;
   margin-top: 0.8em;
   margin-bottom: 0.4em;
   font-family: Chaparral Pro, Georgia, serif;
-  font-size: 1.875rem;
-  line-height: 1.4;
   font-weight: normal;
 }
 @media (min-width: 30em) {
@@ -125,11 +125,11 @@ h1 {
 }
 
 h2 {
+  font-size: 1.398rem;
+  line-height: 1.3412017167382;
   margin-top: 1.07315328206045em;
   margin-bottom: 0.53657664103023em;
   font-family: Chaparral Pro, Georgia, serif;
-  font-size: 1.398rem;
-  line-height: 1.3412017167382;
   font-weight: bold;
 }
 @media (min-width: 30em) {
@@ -140,11 +140,11 @@ h2 {
 }
 
 h3 {
+  font-size: 1.398rem;
+  line-height: 1.3412017167382;
   margin-top: 1.07315328206045em;
   margin-bottom: 0.53657664103023em;
   font-family: Chaparral Pro, Georgia, serif;
-  font-size: 1.398rem;
-  line-height: 1.3412017167382;
   font-weight: normal;
 }
 @media (min-width: 30em) {
@@ -155,9 +155,9 @@ h3 {
 }
 
 h4 {
-  font-family: Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-serif;
   font-size: 1.125rem;
   line-height: 1.3333333333;
+  font-family: Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-serif;
   font-weight: bold;
 }
 @media (min-width: 30em) {
@@ -192,11 +192,13 @@ figure {
   margin: 0;
 }
 
-a,
-a:visited {
-  color: #f58553;
+a {
   font-style: italic;
   text-decoration: none;
+}
+
+a:visited {
+  color: #f58553;
 }
 
 a:hover {
@@ -214,7 +216,7 @@ textarea {
 input[type="text"],
 input[type="email"],
 textarea {
-  padding: 0 .5em;
+  padding: 0 0.5em;
 }
 
 textarea {
@@ -334,7 +336,7 @@ tbody > tr:first-child > td {
 .site-nav .site-nav-list li a {
   border: 2px solid #1b2324;
   height: 100%;
-  padding: .5em;
+  padding: 0.5em;
   width: 100%;
   display: block;
   color: white;
@@ -345,8 +347,8 @@ tbody > tr:first-child > td {
   border-color: #f58553;
 }
 .site-nav .site-nav-list li a:focus, .site-nav .site-nav-list li a:active {
-  border-color: #fdfad3;
   background-color: #f58553;
+  border-color: #fdfad3;
 }
 
 .site-nav-list-interior {
@@ -359,8 +361,8 @@ tbody > tr:first-child > td {
 }
 .front-page .site-nav .site-nav-list li {
   border: 2px solid #f58553;
-  margin: .5em 0;
-  width: calc(50% - .5rem);
+  margin: 0.5em 0;
+  width: calc(50% - 0.5rem);
   -ms-flex-positive: 0;
       flex-grow: 0;
   font-size: 1.125rem;
@@ -463,11 +465,11 @@ tbody > tr:first-child > td {
 }
 
 .media-column {
-  -ms-flex-direction: column;
-      flex-direction: column;
   -ms-flex-align: stretch;
       -ms-grid-row-align: stretch;
       align-items: stretch;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 .media-column .media-img {
   padding-right: 0;
@@ -532,8 +534,8 @@ tbody > tr:first-child > td {
   }
 }
 .homepage-portrait img {
-  min-height: 9.3em;
   max-height: 33vh;
+  min-height: 9.3em;
 }
 @media (min-width: 30em) {
   .homepage-portrait img {
@@ -549,11 +551,11 @@ tbody > tr:first-child > td {
 
 .testimonials h2 {
   color: #fdfad3;
+  font-size: 1.875rem;
+  line-height: 1.4;
   margin-top: 0.8em;
   margin-bottom: 0.4em;
   font-family: Chaparral Pro, Georgia, serif;
-  font-size: 1.875rem;
-  line-height: 1.4;
   font-weight: normal;
 }
 @media (min-width: 30em) {
@@ -580,12 +582,12 @@ tbody > tr:first-child > td {
   padding: 0 1em;
   position: relative;
   background-color: #fdfad3;
-  border-radius: .5em 0 0 .5em;
+  border-radius: 0.5em 0 0 0.5em;
 }
 .compliment .media-body::before {
   position: absolute;
-  left: -15px;
   top: 42px;
+  left: -15px;
   content: url("/images/balloon-tail.png");
 }
 
@@ -604,8 +606,8 @@ tbody > tr:first-child > td {
 }
 
 .article-image {
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 800px;
   text-align: center;
 }
 .article-image img {
@@ -658,13 +660,13 @@ tbody > tr:first-child > td {
 @media (min-width: 30em) {
   .box {
     border-width: 2px;
-    padding: calc(0.3333333333em - 2px) calc(.6666666667em - 2px) calc(0.6666666667em - 2px);
+    padding: calc(0.3333333333em - 2px) calc(0.6666666667em - 2px) calc(0.6666666667em - 2px);
   }
 }
 
 .supplement {
-  margin-bottom: 1em;
   margin-right: -0.5em;
+  margin-bottom: 1em;
   margin-left: 0.5em;
   width: 66.6666666667%;
   float: right;
@@ -699,11 +701,11 @@ tbody > tr:first-child > td {
   position: relative;
 }
 .video-container iframe {
+  height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
 }
 
 .video-container-3-4 {

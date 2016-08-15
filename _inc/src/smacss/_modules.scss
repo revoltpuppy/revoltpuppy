@@ -67,9 +67,9 @@
 	}
 	
 	img{
-		min-height: 9.3em;  // 18/168 - 168 is divisible by 24
 		max-height: 33vh;
 		//max-width: 150px;
+		min-height: 9.3em;  // 18/168 - 168 is divisible by 24
 		
 		@media (min-width: 30em){
 			max-height: 13.94849785407725em;  // 312/22.368 - 312 is divisible by 24
@@ -123,12 +123,12 @@
 		position: relative;
 		//backgrounds & borders
 		background-color: $bright-highlight;
-		border-radius: .5em 0 0 .5em;
+		border-radius: 0.5em 0 0 0.5em;
 		
 		&::before{
 			position: absolute;
-			left: -15px;
 			top: 42px;
+			left: -15px;
 			content: url("/images/balloon-tail.png");
 		}
 	}
@@ -150,8 +150,8 @@
 
 .article-image{
 	// box model
-	max-width: 800px;
 	margin: 0 auto;
+	max-width: 800px;
 	// typography
 	text-align: center;
 	
@@ -167,7 +167,7 @@
 .article-list .article-image img{
 	// box model
 	border: 2px solid $deep-shadow;
-	// backgrounds & borders
+	// decoration
 	border-radius: 2px;
 }
 
@@ -188,9 +188,7 @@
 	padding-right: calc(1em - 9px);
 	padding-left: calc(1em - 9px);
 	width: 100%;
-	// layout
-	//overflow: hidden;
-	// backgrounds & borders
+	// decoration
 	background-color: $bright-highlight;
 	border-radius: 0 0 2px 2px;
 	
@@ -205,25 +203,25 @@
 }
 
 .box{
-		// box model
-		border: 1px solid mix($bright-highlight, $highlight, 66%);
-		border-right-width: 0;
-		border-left-width: 0;
-		padding: calc(0.3333333333em - 1px) 0 calc(0.6666666667em - 1px);
-		// backgrounds and borders
-		border-radius: 2px;
+	// box model
+	border: 1px solid mix($bright-highlight, $highlight, 66%);
+	border-right-width: 0;
+	border-left-width: 0;
+	padding: calc(0.3333333333em - 1px) 0 calc(0.6666666667em - 1px);
+	// decoration
+	border-radius: 2px;
 	
 	@media (min-width: 30em){
 		// box model
 		border-width: 2px;
-		padding: calc(0.3333333333em - 2px) calc(.6666666667em - 2px) calc(0.6666666667em - 2px);
+		padding: calc(0.3333333333em - 2px) calc(0.6666666667em - 2px) calc(0.6666666667em - 2px);
 	}
 }
 
 .supplement{
 	// box model
-	margin-bottom: 1em;
 	margin-right: -0.5em;
+	margin-bottom: 1em;
 	margin-left: 0.5em;
 	width: 66.6666666667%;
 	// layout
@@ -250,11 +248,13 @@
 	position: relative;
 
 	iframe{
+		// box model
+		height: 100%;
 		width: 100%;
+		// layout
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 100%;
 	}
 }
 

@@ -71,6 +71,14 @@ module.exports = function(grunt) {
 				]
 			}*/
 		},
+		
+		sasslint: {
+			options: {
+				//cache-config: false,
+				configFile: 'config/.sass-lint.yml',
+			},
+			target: '_inc/src/**/*.scss',
+		}
     
 		//uglify: {
 			//options: {
@@ -89,9 +97,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	//grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-sass-lint');
 
 	// Default task(s).
 	//grunt.registerTask('default', ['sass', 'autoprefixer', 'uglify']);
-	grunt.registerTask('default', ['sass', 'postcss']);
+	grunt.registerTask('default', ['sasslint', 'sass', 'postcss']);
 
 };

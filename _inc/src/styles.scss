@@ -78,7 +78,7 @@ $small-face: Verdana, Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-ser
  * @section sass-mixins
  */
 @mixin base-type-xxl{
-	font-size: 2.33rem;  // 37.28
+	font-size: 2.33rem; // 37.28
 	line-height: 1.12660944206009;  // 42/37.28
 }
 
@@ -117,12 +117,12 @@ $small-face: Verdana, Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-ser
 }
 
 @mixin like-h1{
+	@include base-type-xl;
 	//box model
 	margin-top: 0.8em;  // 24/30
 	margin-bottom: 0.4em;  // 12/30
 	//typography
 	font-family: $display-face;
-	@include base-type-xl;
 	font-weight: normal;
 	
 	@media (min-width: 30em){
@@ -131,12 +131,12 @@ $small-face: Verdana, Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-ser
 }
 
 @mixin like-h2{
+	@include base-type-l;
 	//box model
 	margin-top: 1.07315328206045em;  // 24/22.364
 	margin-bottom: 0.53657664103023em;  // 12/22.364
 	//typography
 	font-family: $display-face;
-	@include base-type-l;
 	font-weight: bold;
 	
 	@media (min-width: 30em){
@@ -145,12 +145,12 @@ $small-face: Verdana, Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-ser
 }
 
 @mixin like-h3{
+	@include base-type-l;
 	//box model
 	margin-top: 1.07315328206045em;  // 24/22.364
 	margin-bottom: 0.53657664103023em;  // 12/22.364
 	//typography
 	font-family: $display-face;
-	@include base-type-l;
 	font-weight: normal;
 	
 	@media (min-width: 30em){
@@ -159,8 +159,8 @@ $small-face: Verdana, Freight Sans Pro, Freight Sans, Helvetica, Arial, sans-ser
 }
 
 @mixin like-h4{
-	font-family: $text-face;
 	@include base-type;
+	font-family: $text-face;
 	font-weight: bold;
 	
 	@media (min-width: 30em){

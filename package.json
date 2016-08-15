@@ -21,6 +21,7 @@
     "grunt-contrib-jshint": "1.0.x",
     "grunt-contrib-sass": "1.0.x",
     "grunt-contrib-uglify": "2.0.x",
-    "grunt-postcss": "0.8.x"
+    "grunt-postcss": "0.8.x",
+    "grunt-sass-lint": "^0.2.0"
   }
 }

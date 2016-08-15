@@ -1,0 +1,124 @@
+#########################
+## Sample Sass Lint File
+#########################
+# Linter Options
+options:
+  # Don't merge default rules
+  merge-default-rules: false
+  # Set the formatter to 'html'
+  formatter: html
+  # Output file instead of logging results
+  #output-file: 'linters/sass-lint.html'
+# File Options
+files:
+  #include: 'sass/**/*.s+(a|c)ss'
+  ignore:
+    - 'sass/vendor/**/*.*'
+# Rule Configuration
+rules:
+  attribute-quotes: 2
+  border-zero: 2
+  brace-style: 2
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+  leading-zero:
+    - 1
+    -
+      include: true
+  no-color-literals: 1
+  no-duplicate-properties: 2
+  no-empty-rulesets: 2
+  no-important: 2
+  no-mergeable-selectors: 2
+  no-misspelled-properties: 2
+  placeholder-in-extend: 2
+  #mixins-before-declarations:
+  #  - 2
+  #  -
+  #    exclude:
+  #      - breakpoint
+  #      - mq
+
+  no-warn: 1
+  no-debug: 1
+  no-ids: 2
+  hex-notation:
+    - 2
+    -
+      style: lowercase
+  indentation:
+    - 1
+    -
+      size: tab
+  property-sort-order:
+    - 1
+    -
+      order:
+        # box model
+        - border
+        - border-top
+        - border-right
+        - border-bottom
+        - border-left
+        - border-width
+        - border-top-width
+        - border-right-width
+        - border-bottom-width
+        - border-left-width
+        - height
+        - margin
+        - margin-top
+        - margin-right
+        - margin-bottom
+        - margin-left
+        - padding
+        - padding-top
+        - padding-right
+        - padding-bottom
+        - padding-left
+        - width
+        - max-height
+        - max-width
+        - min-height
+        - min-width
+        # layout
+        - align-content
+        - align-items
+        - display
+        - flex
+        - flex-basis
+        - flex-direction
+        - flex-grow
+        - flex-shrink
+        - flex-wrap
+        - justify-content
+        - overflow
+        - position
+        - top
+        - right
+        - bottom
+        - left
+        # typography
+        - color
+        - font-family
+        - font-style
+        - -webkit-font-smoothing
+        - -moz-osx-font-smoothing
+        - font-variant-ligatures
+        - font-variant-numeric
+        - font-weight
+        - text-align
+        - text-shadow
+        - text-rendering
+        # decoration
+        - background
+        - background-color
+        - background-image
+        - border-color
+        - border-radius
+        - border-style
+        - box-shadow
+        # animations and transitions
+        - animation
+        - transition
+      ignore-custom-properties: true
