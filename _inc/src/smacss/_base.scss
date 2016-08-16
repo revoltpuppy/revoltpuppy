@@ -41,7 +41,7 @@ button{
 	@include base-type;
 	font-variant-ligatures: common-ligatures;
 	font-variant-numeric: oldstyle-nums;
-	 -webkit-font-smoothing: antialiased; //Reduce text chubbiness in Safari, Chrome
+	-webkit-font-smoothing: antialiased; //Reduce text chubbiness in Safari, Chrome
 	-moz-osx-font-smoothing: grayscale; //Reduce text chubbiness in Firefox
 	// decoration
 	background-color: $shadow;
