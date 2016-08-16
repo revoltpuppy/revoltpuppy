@@ -78,7 +78,7 @@ module.exports = function(grunt) {
 				configFile: 'config/.sass-lint.yml',
 			},
 			target: '_inc/src/**/*.scss',
-		}
+		},
     
 		//uglify: {
 			//options: {
@@ -89,6 +89,13 @@ module.exports = function(grunt) {
 				dest: 'js/build/scripts.min.js'
 			}
 		}*/
+	
+		watch: {
+			processSass: {
+				files: ['_inc/src/**/*.scss'],
+				tasks: ['sasslint', 'sass', 'postcss'],
+			}
+		}
     
 	});
 
@@ -96,6 +103,7 @@ module.exports = function(grunt) {
 	//grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	//grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-sass-lint');
 
